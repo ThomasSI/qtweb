@@ -1,8 +1,9 @@
 TEMPLATE = app
 
-QT += qml quick widgets
+QT += qml quick widgets webengine webkit core gui network webkitwidgets
 
-SOURCES += main.cpp
+#SOURCES += main.cpp
+SOURCES += main2.cpp
 
 RESOURCES += qml.qrc
 

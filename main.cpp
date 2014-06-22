@@ -1,12 +1,16 @@
-#include <QApplication>
+#include <QGuiApplication>
+#include <QQuickView>
 #include <QQmlApplicationEngine>
+#include <QtWebEngine/QWebEngine>
 
 int main(int argc, char *argv[])
 {
-    QApplication app(argc, argv);
+    QGuiApplication app(argc, argv);
 
-    QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:///main.qml")));
+    QWebEngine::initialize();
 
+    QQuickView viewer;
+    viewer.setSource(QUrl(QStringLiteral("qrc:///main.qml")));
+    viewer.show();
     return app.exec();
 }
